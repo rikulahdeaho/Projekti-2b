@@ -16,22 +16,30 @@ $(document).ready(function () {
     if (selectedCategories.length > 0) {
       const apiUrl = `https://v2.jokeapi.dev/joke/${selectedCategories.join()}?blacklistFlags=nsfw,racist,sexist&type=twopart`;
 
-      $.getJSON(apiUrl, function (data) {
-        if (data.error) {
-          $('#jokeSetup').text('Failed to fetch joke. Please try again.');
-          $('#jokeDelivery').text('');
-        } else {
-          $('#jokeSetup').text(data.setup);
-          $('#jokeDelivery').text(data.delivery);
-        }
-      }).fail(function () {
-        $('#jokeSetup').text('An error occurred while fetching the joke.');
-        $('#jokeDelivery').text('');
-        console.error('Error fetching joke.');
+      // Lisää fadeIn- ja fadeOut-tehosteet
+      $('#jokeSetup, #jokeDelivery').fadeOut(400, function () {
+        $.getJSON(apiUrl)
+          .done(function (data) {
+            if (data.error) {
+              $('#jokeSetup').text('Failed to fetch joke. Please try again.').fadeIn(400);
+              $('#jokeDelivery').text('').fadeIn(400);
+            } else {
+              $('#jokeSetup').text(data.setup).fadeIn(400);
+              $('#jokeDelivery').text(data.delivery).fadeIn(400);
+            }
+          })
+          .fail(function () {
+            $('#jokeSetup').text('An error occurred while fetching the joke.').fadeIn(400);
+            $('#jokeDelivery').text('').fadeIn(400);
+            console.error('Error fetching joke.');
+          });
       });
+
     } else {
-      $('#jokeSetup').text('Please select at least one category.');
-      $('#jokeDelivery').text('');
+      $('#jokeSetup, #jokeDelivery').fadeOut(400, function () {
+        $('#jokeSetup').text('Please select at least one category.').fadeIn(400);
+        $('#jokeDelivery').text('').fadeIn(400);
+      });
     }
   });
 });
