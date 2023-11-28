@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Joke Generator</title>
+  
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Christmas font -->
+  <link href='https://fonts.googleapis.com/css?family=Mountains of Christmas' rel='stylesheet'>
+  <!-- omat tyylit -->
+  <link rel="stylesheet" href="style.css">
+
+  
+</head>
+<body class="css-selector">
+  <div class="container mt-5">
+    <h2 class="text-center mb-4 display-1" style="padding-bottom: 70px;"><strong>Joke Generator</strong></h2>
+
+    <!-- Checkboxit kategorian valintaan-->
+    <h1 class="text-center mb-4 display-3">Select a category</h1>
+    <div style="display: flex; justify-content: space-evenly;">
+      <div class="MatrixTextEffect">
+        <input type="checkbox" class="form-check-input" id="programmingCheckbox" value="Programming">
+        <label class="form-check-label" for="programmingCheckbox" style="margin-left: 25px;"></label>
+        <p class="Pulse">Programming</p>
+      </div>
+      <div>
+        <input type="checkbox" class="form-check-input" id="christmasCheckbox" value="Christmas">
+        <label class="form-check-label" for="christmasCheckbox"></label>
+        <p class="crismas">Christmas</p>
+      </div>
+    </div>
+
+    <!-- Button vitsin hakuun apilta -->
+    <div class="text-center" style="padding: 30px;">
+      <button id="getJokeBtn">Get Joke</button>
+    </div>
+    
+    <!-- Vitsikortti -->
+    <div class="card card-selector ">
+      <div class="card-body">
+        <h5 class="card-title text-center borderit" id="jokeSetup"></h5>
+        <p class="borderit card-text text-center " id="jokeDelivery"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skriptit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
