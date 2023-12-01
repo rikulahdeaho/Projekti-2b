@@ -4,4 +4,4 @@ Muokattiin myös hieman Css ulkoasua
 Ei tehty videota, sillä sivu toimii ulkoisesti samalla tavalla, kun 2a palautus.
 
 Kiitos kurssista ja hyvää joulua 
-T: Ilmari ja Riku
+T: Ilmari Muhonen ja Riku Lähdeaho
